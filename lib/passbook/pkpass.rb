@@ -78,7 +78,7 @@ module Passbook
       raise 'Organization Name Identifier missing' unless @pass.include?('organizationName')
       raise 'Format Version' unless @pass.include?('formatVersion')
       raise 'Format Version should be a numeric' unless JSON.parse(@pass)['formatVersion'].is_a?(Numeric)
-      raise 'Description' unless @pass.include?('description')
+      raise 'Description missing' unless @pass.include?('description')
     end
 
     def createManifest
